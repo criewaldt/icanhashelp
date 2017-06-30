@@ -15,6 +15,19 @@ html(lang='en')
         link(href='http://fonts.googleapis.com/css?family=Raleway:400,300,700', rel='stylesheet', type='text/css')
         script(src='js/jquery.min.js')
         script(src='js/smoothscroll.js')
+        
+        //main
+        script(src='js/main.js')
+        
+        //bootstrap select
+        // Latest compiled and minified CSS
+        link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css')
+        // Latest compiled and minified JavaScript
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js')
+        // (Optional) Latest compiled and minified JavaScript translation files
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/i18n/defaults-*.min.js')
+        
+        
     body(data-spy='scroll', data-offset='0', data-target='#navigation')
         // Fixed navbar
         #navigation.navbar.navbar-default.navbar-fixed-top
@@ -24,18 +37,18 @@ html(lang='en')
                         span.icon-bar
                         span.icon-bar
                         span.icon-bar
-                    a.navbar-brand(href='#')
-                        b Pratt
+                    a.navbar-brand(href='/')
+                        b ICanHasHelp.com
                 .navbar-collapse.collapse
                     ul.nav.navbar-nav
                         li.active
-                            a.smothscroll(href='#home') Home
+                            a.smothscroll(href='#home') What's this?
                         li
-                            a.smothscroll(href='#desc') Description
+                            a.smothscroll(href='#desc') Programs & Services
                         li
-                            a.smothScroll(href='#showcase') Showcase
-                        li
-                            a.smothScroll(href='#contact') Contact
+                            a.smothscroll(href='#help') Get Help
+                            
+                            
                 // /.nav-collapse
         section#home(name='home')
         #headerwrap
@@ -44,167 +57,131 @@ html(lang='en')
                     .col-lg-12
                         h1
                             | I Can Has 
-                            b Help?
-                        h3 Find out if you're eligible for help from various programs and sources.
+                            b Help
+                        h3 Get information on benefits, programs, resources, and services for NYC residents
                         br
-                    .col-lg-2
-                        h5 Amazing Results
-                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        img.hidden-xs.hidden-sm.hidden-md(src='img/arrow1.png')
-                    .col-lg-8
-                        img.img-responsive(src='img/app-bg.png', alt='')
-                    .col-lg-2
                         br
-                        img.hidden-xs.hidden-sm.hidden-md(src='img/arrow2.png')
-                        h5 Awesome Design
-                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        br
+                        br
             // / .container
         // / #headerwrap
         section#desc(name='desc')
         // INTRO WRAP
         #intro
             .container
-                .row.centered
-                    h1 Designed To Excel
-                    br
-                    br
-                    .col-lg-4
-                        img(src='img/intro01.png', alt='')
-                        h3 Community
-                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    .col-lg-4
-                        img(src='img/intro02.png', alt='')
-                        h3 Schedule
-                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    .col-lg-4
-                        img(src='img/intro03.png', alt='')
-                        h3 Monitoring
-                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                br
-                hr
-            // / .container
-        // / #introwrap
-        // FEATURES WRAP
-        #features
-            .container
                 .row
-                    h1.centered What's New?
+                    h1.centered What is this? 
+                    h3.centered A tool to help NYC residents get help.
                     br
+                .row
+                    h1.centered How does it work? 
+                    h3.centered Select a category and population type (or many), and get information on help provided to NYC residents. 
+                    h3.centered The information is sorted by categories and population types. They incude:
                     br
-                    .col-lg-6.centered
-                        img.centered(src='img/mobile.png', alt='')
-                    .col-lg-6
-                        h3 Some Features
-                        br
-                        // ACCORDION
-                        #accordion2.accordion.ac
-                            .accordion-group
-                                .accordion-heading
-                                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#collapseOne')
-                                        | First Class Design
-                                // /accordion-heading
-                                #collapseOne.accordion-body.collapse.in
-                                    .accordion-inner
-                                        p
-                                            | It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                    // /accordion-inner
-                                // /collapse
-                            // /accordion-group
+                .row
+                    h3.centered Categories
+                    
+                    .col-1g-12.text-center
+                        .row.well.container
                             br
-                            .accordion-group
-                                .accordion-heading
-                                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#collapseTwo')
-                                        | Retina Ready Theme
-                                #collapseTwo.accordion-body.collapse
-                                    .accordion-inner
-                                        p
-                                            | It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                    // /accordion-inner
-                                // /collapse
-                            // /accordion-group
+                            for category in params.category
+                                .col-sm-3
+                                    strong=category
+                                    br
+                                    br
+                .row
+                    h3.centered Population Types
+                    .col-1g-12.text-center
+                        .row.well.container
+                        
                             br
-                            .accordion-group
-                                .accordion-heading
-                                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#collapseThree')
-                                        | Awesome Support
-                                #collapseThree.accordion-body.collapse
-                                    .accordion-inner
-                                        p
-                                            | It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                    // /accordion-inner
-                                // /collapse
-                            // /accordion-group
+                            for category in params.population
+                                .col-sm-3
+                                    strong=category
+                                    br
+                                    br
+                #results.hidden
+                    .row
+                        h3.centered Results
+                        .col-lg-12.text-center
+                            // Button trigger modal
+                            // Trigger the modal with a button
+                            
                             br
-                            .accordion-group
-                                .accordion-heading
-                                    a.accordion-toggle(data-toggle='collapse', data-parent='#accordion2', href='#collapseFour')
-                                        | Responsive Design
-                                #collapseFour.accordion-body.collapse
-                                    .accordion-inner
-                                        p
-                                            | It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                    // /accordion-inner
-                                // /collapse
-                            // /accordion-group
                             br
-                        // Accordion
+                            br
+                        
             // / .container
-        // / #features
+        // / #intro
+        
+        
+        
+        // Modal
+        #eligible.modal.fade(role='dialog')
+            .modal-dialog
+                // Modal content
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal') ×
+                        strong.modal-title Benefits, Programs, Resources, And Services For NYC Residents
+                    .modal-body
+                        .well
+                            strong Select a category
+                            p Select ALL to search in all categories
+                            .row
+                                .col-xs-12
+                                  .form-group
+                                    select.selectpicker.form-control(id='searchCategory')
+                                        for option in params.category
+                                            option=option
+                        .well
+                            strong Sort By Population Type 
+                            p You can select multiple population types
+                            .row
+                                .col-xs-12
+                                  .form-group
+                                    select.selectpicker.form-control(id='searchPopulation', multiple)
+                                        for option in params.population
+                                            option=option
+                    .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') Close
+                        button.btn.btn-default(type='button') Clear All Selections
+                        button.btn.btn-info(onclick='search()', type='button', data-dismiss='modal') Search
+                        
+
+
+        
+        
         section#showcase(name='showcase')
-        #showcase
-            .container
-                .row
-                    h1.centered Some Screenshots
+            #showcase
+                .container.text-center
+                    .col-lg-12
+                        h1.centered For more information on programs and services offered to NYC residents go to 
+                            a(href="http://www.nyc.gov/") nyc.gov
+                            | , or call 311
                     br
-                    .col-lg-8.col-lg-offset-2
-                        #carousel-example-generic.carousel.slide
-                            // Indicators
-                            ol.carousel-indicators
-                                li.active(data-target='#carousel-example-generic', data-slide-to='0')
-                                li(data-target='#carousel-example-generic', data-slide-to='1')
-                            // Wrapper for slides
-                            .carousel-inner
-                                .item.active
-                                    img(src='img/item-01.png', alt='')
-                                .item
-                                    img(src='img/item-02.png', alt='')
-                br
-                br
-                br
-            // /container
+                // /container
+                
         section#contact(name='contact')
         #footerwrap
             .container
-                .col-lg-5
-                    h3 Address
+                .col-lg-4
+                    h3 Made possible by:
                     p
-                        | Av. Greenville 987,
-                        br
-                        | 				New York,
-                        br
-                        | 				90873
-                        br
-                        | 				United States
-                .col-lg-7
-                    h3 Drop Us A Line
-                    br
-                    form(role='form', action='#', method='post', enctype='plain')
-                        .form-group
-                            label(for='name1') Your Name
-                            input#name1.form-control(type='name', name='Name', placeholder='Your Name')
-                        .form-group
-                            label(for='email1') Email address
-                            input#email1.form-control(type='email', name='Mail', placeholder='Enter email')
-                        .form-group
-                            label Your Text
-                            textarea.form-control(name='Message', rows='3')
-                        br
-                        button.btn.btn-large.btn-success(type='submit') SUBMIT
+                        a(href="https://dev.socrata.com/") The Socrata Open Data API
+                .col-lg-4
+                    h3 Dataset Owner:
+                    p
+                        a(href="https://opendata.cityofnewyork.us/") NYC OpenData
+                .col-lg-4
+                    h3 Data provided by:
+                    p
+                        a(href="http://www1.nyc.gov/site/operations/index.page") Mayor’s Office of Operations (OPS)
         #c
-            .container
+            .container.text-center
                 p
                     | Created by 
-                    a(href='http://www.blacktie.co') BLACKTIE.CO
+                    a(href='http://www.chrisriewaldt.com') ChrisR
         //
             Bootstrap core JavaScript
             ==================================================
